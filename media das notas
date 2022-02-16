@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+	int i;
+	double n1[3], n2[3], n3[3], n4[3], m[3], EF, MEF;
+	char nome[3][30];
+	
+	for(i=0; i<3; i++){
+	
+		printf("Digite o nome do aluno: ");
+		fflush(stdin);
+		fgets(nome[i], 30, stdin);
+		printf("Digite as notas: ");
+		scanf("%lf%lf%lf%lf", &n1[i], &n2[i], &n3[i], &n4[i]);
+		m[i] =(n1[i]*2+n2[i]*3+n3[i]*4+n4[i]*1)/10;
+	}
+	for(i=0; i<3; i++)
+		printf("media: %.1lf\t", m[i] );
+	printf("\n");
+	printf("\nNome\t\tN1\tN2\tN3\tN4\tMedia\tResultado\n");
+	
+	for(i=0;i<3;i++){
+		if (m[i]>=7.0)
+			printf("%s\t\t%.1lf\t%.1lf\t%.1lf\t%.1lf\t%.1lf\tAprovado.\n", nome[i], n1[i], n2[i], n3[i], n4[i], m[i]);
+		else if (m[i]<5.0)
+			printf("%s\t\t%.1lf\t%.1lf\t%.1lf\t%.1lf\t%.1lf\tReprovado.\n", nome[i], n1[i], n2[i], n3[i], n4[i], m[i]);
+				else if (m[i] >= 5.0 && m[i] <=6.9)
+					printf("%s\t\t%.1lf\t%.1lf\t%.1lf\t%.1lf\t%.1lf\tExame Final.\n", nome[i], n1[i], n2[i], n3[i], n4[i], m[i] );
+}	
+	return 0;
+}
