@@ -1,0 +1,37 @@
+#include<stdio.h>
+
+void apresentarClassificacao (){
+	printf("IDADE <= 10 CRIANCA\n 10 > IDADE < 18 ADOLESCENTE\n 18 >= IDADE < 25 JOVEM\n 25 >= IDADE <= 58 ADULTO\n IDADE > 58 IDOSO\n");
+}
+
+int calcalarIdade (int anoNasc, int anoAtual){
+	return  anoAtual - anoNasc;
+}
+
+void obtemNivel(int idade) {
+	switch(idade){
+			case 1 ... 10: printf("\nVoce eh crianca"); break;
+			case 11 ... 17: printf("\nVoce eh adolescente"); break;
+			case 18 ... 24: printf("\nVoce eh jovem"); break;
+			case 25 ... 58: printf("\nVoce eh adulto"); break;
+			case 59 ... 110: printf("Voce eh idoso"); break;
+			default: printf("\nIdade invalida");
+			
+	}
+}
+int main(){
+	
+	int anoAtual, anoNasc, idade;
+	
+	printf("Digite o ano de nascimento e o ano atual: ");
+	scanf("%d%d", &anoAtual, &anoNasc);
+	
+	idade = calcalarIdade (anoAtual, anoNasc);
+	
+	printf("idade %d\n", idade);
+	
+	apresentarClassificacao();
+	
+	obtemNivel(idade);
+	
+}
