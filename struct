@@ -1,0 +1,22 @@
+#include<stdio.h>
+
+struct aluno {
+	char nome[30], cpf[14], rg[10];
+	int idade;
+	float altua, peso;
+};
+
+int main(){
+	struct aluno aluno1;
+	printf("Digite o seu nome: ");
+	fgets(aluno1.nome, 30, stdin);
+	printf("Digite o cpf: ");
+	scanf("%s", aluno1.cpf);
+	printf("Digite o rg: ");
+	scanf("%s", aluno1.rg);
+	
+	printf("\nNome %s\n", aluno1.nome);
+	printf("CPF %s\n", aluno1.cpf);
+	printf("\nRG %s\n", aluno1.rg);
+	
+}
